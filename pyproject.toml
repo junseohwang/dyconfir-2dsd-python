@@ -1,33 +1,25 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dynconfir-2dsd"
+name = "dyconfir-2dsd-python"
 version = "0.1.0"
-description = "Python implementation of dynConfiR 2DSD simulator"
+description = "Python implementation of the dynConfiR 2DSD simulator"
 readme = "README.md"
 requires-python = ">=3.10"
+authors = [
+  { name = "Jun Seo Hwang" }
+]
 dependencies = [
-    "numpy>=1.23",
-    "pandas>=1.5",
+  "numpy>=1.23",
+  "pandas>=1.5",
 ]
 
 [project.optional-dependencies]
 test = [
-    "pytest>=7.0",
-]
-authors = [
-  {name = "OpenAI assistant-generated scaffold"}
-]
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
-  "Operating System :: OS Independent",
+  "pytest>=7.0",
 ]
 
-[tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
